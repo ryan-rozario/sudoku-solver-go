@@ -5,6 +5,7 @@ import (
 
 	"github.com/ryan-rozario/sudoku-solver/solver"
 	"github.com/ryan-rozario/sudoku-solver/sudoku"
+	"github.com/ryan-rozario/sudoku-solver/web_service"
 )
 
 func main() {
@@ -22,5 +23,7 @@ func main() {
 	nb := sudoku.NewBoard(test_mat)
 	solver.FillGrid(nb)
 	fmt.Println(nb.Grid)
+	web_service.HandleRequests()
+	//bytes := []byte(test_mat)
 
 }
