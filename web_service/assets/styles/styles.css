@@ -1,0 +1,22 @@
+:root {
+  --columns-no: 9;
+  --row-no: 9
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--columns-no), 50px);
+  grid-template-rows: repeat(var(--row-no), 50px);
+  padding: 10px;
+}
+
+.sudoku-cell{
+	border: 3px solid #000000;
+	background: transparent;
+	position: relative;
+	z-index: 100;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}

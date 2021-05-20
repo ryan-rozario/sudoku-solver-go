@@ -29,7 +29,8 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func HandleRequests() {
 	// creates a new instance of a mux router
 	apiRouter := mux.NewRouter().StrictSlash(true)
-	apiRouter.HandleFunc("/api/solve-sudoku", homePage).Methods("GET")
+	staticFileDirectory := http.Dir("./assets/")
+	apiRouter.HandleFunc("/", homePage).Methods("GET")
 	apiRouter.HandleFunc("/api/solve-sudoku", solveSudokuApi).Methods("POST")
 	log.Fatal(http.ListenAndServe(":10000", apiRouter))
 }
